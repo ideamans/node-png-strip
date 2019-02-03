@@ -1,6 +1,6 @@
 {
-  "name": "png-strip",
-  "version": "0.2.0",
+  "name": "png-strip-chunks",
+  "version": "0.3.0",
   "author": "Kunihiko Miyanaga <miyanaga@ideamans.com>",
   "main": "index.js",
   "license": "MIT",
