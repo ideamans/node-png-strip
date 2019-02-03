@@ -1,6 +1,5 @@
 const Extract = require('png-chunks-extract'),
   Encode = require('png-chunks-encode'),
-  Text = require('png-chunk-text'),
   Fs = require('fs')
 
 const types = {

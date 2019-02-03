@@ -3,7 +3,7 @@ Node module to strip PNG chunks to reduce file size.
 # Usage
 
 ```
-const PngStrip = require('png-strip'),
+const PngStrip = require('png-strip-chunks'),
   fs = require('fs')
 
 const buffer = await PngStrip.strip('/path/to/image.png or buffer')

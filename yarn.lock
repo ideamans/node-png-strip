@@ -2087,10 +2087,6 @@ plur@^3.0.1:
   dependencies:
     irregular-plurals "^2.0.0"
 
-png-chunk-text@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/png-chunk-text/-/png-chunk-text-1.0.0.tgz#1c6006d8e34ba471d38e1c9c54b3f53e1085e18f"
-
 png-chunks-encode@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/png-chunks-encode/-/png-chunks-encode-1.0.0.tgz#d9ea5e35caeeed782658c1ab7bafa7a5edb1a878"

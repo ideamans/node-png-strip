@@ -1,6 +1,6 @@
 {
   "name": "png-strip-chunks",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "Kunihiko Miyanaga <miyanaga@ideamans.com>",
   "main": "index.js",
   "license": "MIT",
@@ -12,7 +12,6 @@
     "ava": "^1.2.0"
   },
   "dependencies": {
-    "png-chunk-text": "^1.0.0",
     "png-chunks-encode": "^1.0.0",
     "png-chunks-extract": "^1.0.0"
   }
