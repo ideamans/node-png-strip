@@ -27,7 +27,7 @@ test.beforeEach(async t => {
 test('Default Keeps core, transparency and colorSpace', async t => {
   const buffer = await PngStrip.strip(t.context.withAllChunks)
   const set = utilSortedChunkNameSet(buffer)
-  t.deepEqual(set, new Set(['IDAT', 'IEND', 'IHDR', 'PLTE', 'cHRM', 'gAMA', 'sRGB', 'tRNS']))
+  t.deepEqual(set, new Set(['IDAT', 'IEND', 'IHDR', 'PLTE', 'cHRM', 'gAMA', 'sBIT', 'sRGB', 'tRNS']))
 })
 
 test('Keep only core', async t => {
@@ -39,7 +39,7 @@ test('Keep only core', async t => {
 test('Keep only core and misc', async t => {
   const buffer = await PngStrip.strip(t.context.withAllChunks, [PngStrip.types.core, PngStrip.types.misc])
   const set = utilSortedChunkNameSet(buffer)
-  t.deepEqual(set, new Set(['IDAT', 'IEND', 'IHDR', 'PLTE', 'bKGD', 'hIST', 'pHYs', 'sBIT', 'tIME']))
+  t.deepEqual(set, new Set(['IDAT', 'IEND', 'IHDR', 'PLTE', 'bKGD', 'hIST', 'pHYs']))
 })
 
 test('Keep only core and dummy', async t => {

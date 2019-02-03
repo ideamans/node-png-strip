@@ -6,10 +6,11 @@ const Extract = require('png-chunks-extract'),
 const types = {
   core: ['IHDR', 'PLTE', 'IDAT', 'IEND'],
   transparency: ['tRNS'],
-  colorSpace: ['gAMA', 'cHRM', 'sRGB', 'iCCP'],
+  colorSpace: ['gAMA', 'cHRM', 'sRGB', 'iCCP', 'sBIT'],
   textual: ['tEXt', 'zTXt', 'iTXt'],
-  misc: ['bKGD', 'pHYs', 'sBIT', 'sPLT', 'hIST', 'tIME'],
-};
+  misc: ['bKGD', 'pHYs', 'sPLT', 'hIST'],
+  time: ['tIME'],
+}
 
 async function toBuffer(png) {
   if (png instanceof Buffer) return png
@@ -36,6 +37,9 @@ async function analyze(png) {
 }
 
 async function strip(png, keep=[types.core, types.transparency, types.colorSpace]) {
+  const buffer = await toBuffer(png)
+  const chunks = Extract(buffer)
+
   const flatten = keep.reduce((flat, t) => {
     if (t instanceof Array)
       flat = flat.concat(t)
@@ -43,9 +47,6 @@ async function strip(png, keep=[types.core, types.transparency, types.colorSpace
       flat.push(t)
     return flat
   }, [])
-
-  const buffer = await toBuffer(png)
-  const chunks = Extract(buffer)
 
   const strip = chunks.filter(chunk => flatten.includes(chunk.name))
   return new Buffer(Encode(strip))
