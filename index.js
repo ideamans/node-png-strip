@@ -48,7 +48,7 @@ async function strip(png, keep=[types.core, types.transparency, types.colorSpace
   }, [])
 
   const strip = chunks.filter(chunk => flatten.includes(chunk.name))
-  return new Buffer(Encode(strip))
+  return Buffer.from(Encode(strip))
 }
 
 module.exports = {

@@ -21,7 +21,7 @@ test.beforeEach(async t => {
     chunks.splice(-1, 0, c)
   }
 
-  t.context.withAllChunks = new Buffer(Encode(chunks))
+  t.context.withAllChunks = Buffer.from(Encode(chunks))
 })
 
 test('Default Keeps core, transparency and colorSpace', async t => {
