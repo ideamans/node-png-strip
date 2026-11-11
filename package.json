@@ -9,7 +9,7 @@
     "watch": "ava -vw"
   },
   "devDependencies": {
-    "ava": "^1.2.0"
+    "ava": "^8"
   },
   "dependencies": {
     "png-chunks-encode": "^1.0.0",

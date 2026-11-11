@@ -1,8 +1,8 @@
-import test from 'ava'
-import PngStrip from '../'
-import Path from 'path'
-import Extract from 'png-chunks-extract'
-import Encode from 'png-chunks-encode'
+const test = require('ava').default
+const PngStrip = require('../')
+const Path = require('path')
+const Extract = require('png-chunks-extract')
+const Encode = require('png-chunks-encode')
 
 function utilSortedChunkNameSet(buffer) {
   const chunks = Extract(buffer)

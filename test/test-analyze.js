@@ -1,7 +1,7 @@
-import test from 'ava'
-import PngStrip from '../'
-import Path from 'path'
-import Fs from 'fs'
+const test = require('ava').default
+const PngStrip = require('../')
+const Path = require('path')
+const Fs = require('fs')
 
 test('Analyze dices.png from path', async t => {
   const result = await PngStrip.analyze(Path.join(__dirname, 'data/dices.png'))
